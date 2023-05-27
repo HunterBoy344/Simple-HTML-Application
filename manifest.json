@@ -1,10 +1,10 @@
 {
-    "name": "TrackMania DS",
-    "short_name": "TrackMania DS",
+    "name": "Pokémon Black",
+    "short_name": "Pokémon Black",
     "start_url": ".",
     "display": "fullscreen",
     "background_color": "black",
-    "description": "TrackMania DS",
+    "description": "Pokémon Black",
     "icons": [{
       "src": "icon.png",
       "sizes": "512x512",
