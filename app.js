@@ -1,4 +1,4 @@
-var VER = 'v20230219'
+var VER = 'v20230219 (App), v20210913 (Emulator)'
 
 
 var isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
@@ -707,7 +707,7 @@ function uiSwitchTo(mode) {
 
 window.onload = async () => {
     // YOUR FILE NAME GOES HERE!!!!!!
-    var file = await fetch('PokemonBlack.nds').then(r => r.blob());
+    var file = await fetch('data.nds').then(r => r.blob());
     if (!file) {
         return
     }
