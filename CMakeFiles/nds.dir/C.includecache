@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/libretro-common/include/boolean.h
+stdbool.h
+-
+
+../src/libretro-common/include/compat/strl.h
+string.h
+-
+stddef.h
+-
+../../../config.h
+../src/config.h
+retro_common_api.h
+-
+
+../src/libretro-common/include/retro_common_api.h
+sys/types.h
+-
+
+../src/libretro-common/include/retro_inline.h
+
+/root/StuntsMultiplayer/desmume-wasm/desmume/src/libretro-common/encodings/encoding_utf.c
+stdint.h
+-
+stdlib.h
+-
+stddef.h
+-
+string.h
+-
+boolean.h
+-
+compat/strl.h
+-
+retro_inline.h
+-
+

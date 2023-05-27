@@ -1,0 +1,13 @@
+{
+    "name": "TrackMania DS",
+    "short_name": "TrackMania DS",
+    "start_url": ".",
+    "display": "fullscreen",
+    "background_color": "black",
+    "description": "TrackMania DS",
+    "icons": [{
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }]
+  }
