@@ -709,7 +709,7 @@ window.onload = async () => {
     if (await localforage.getItem("ROMdata") === null) {
         // YOUR FILE NAME GOES HERE!!!!!!
         var ROMfile = await fetch('data.nds').then(r => r.blob());
-        localforage.setItem("ROMdata", ROMfile)
+        await localforage.setItem("ROMdata", ROMfile)
     }
     var file = await localforage.getItem("ROMdata")
     if (!file) {
