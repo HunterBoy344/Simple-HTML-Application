@@ -715,11 +715,19 @@ async function clearROM() {
 window.onload = async () => {
     if (await localforage.getItem("ROMdata") === null) {
         var ROMfile = await fetch('data.nds').then(r => r.blob());
-        await localforage.setItem("ROMdata", ROMfile.arrayBuffer())
+        try {
+          await localforage.setItem("ROMdata", ROMfile.arrayBuffer())
+        } catch (err) {
+          var cantCache = 1
+        }
+     }
+    try {
+      var file = new Blob([await localforage.getItem("ROMdata")])
+    } catch (err) {
+      var cantCache = 1
     }
-    var file = new Blob([await localforage.getItem("ROMdata")])
-    if (!file) {
-        return
+    if (cantCache === 1) {
+        var file = await fetch('data.nds').then(r => r.blob());
     }
     //var fileNameLower = file.name.toLowerCase()
     /*if (fileNameLower.endsWith('.json')) {
