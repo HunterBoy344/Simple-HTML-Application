@@ -707,11 +707,10 @@ function uiSwitchTo(mode) {
 
 window.onload = async () => {
     if (await localforage.getItem("ROMdata") === null) {
-        // YOUR FILE NAME GOES HERE!!!!!!
         var ROMfile = await fetch('data.nds').then(r => r.blob());
-        await localforage.setItem("ROMdata", ROMfile)
+        await localforage.setItem("ROMdata", ROMfile.arrayBuffer())
     }
-    var file = await localforage.getItem("ROMdata")
+    var file = new Blob([await localforage.getItem("ROMdata")])
     if (!file) {
         return
     }
