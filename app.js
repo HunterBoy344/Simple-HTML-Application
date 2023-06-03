@@ -705,6 +705,13 @@ function uiSwitchTo(mode) {
 
 }
 
+async function clearROM() {
+  await localforage.removeItem("ROMdata")
+  console.log("Cleared ROM data!!")
+  alert("Cleared cached ROM. Please restart the app.")
+  return
+}
+
 window.onload = async () => {
     if (await localforage.getItem("ROMdata") === null) {
         var ROMfile = await fetch('data.nds').then(r => r.blob());
